@@ -3,8 +3,7 @@ import "../styles/task.css";
 import { FcEmptyTrash } from "react-icons/fc";
 import { FcFullTrash } from "react-icons/fc";
 
-const Tasks = () => {
-  const [tasks, setTasks] = useState([]);
+const Tasks = ({ tasks, setTasks }) => {
   const [inputTask, setInputTask] = useState("");
 
   const handleTaskInputChange = (e) => setInputTask(e.target.value);
@@ -28,14 +27,15 @@ const Tasks = () => {
   };
 
   const handleToggleStatus = (id) => {
-    const updatedTasks = tasks.map((task) => {
+    const updatedTasks = tasks.map((task) =>
       task.id === id
         ? {
-            ...tasks,
+            ...task,
             status: task.status === "pending" ? "completed" : "pending",
           }
-        : task;
-    });
+        : task
+    );
+
     setTasks(updatedTasks);
   };
 
@@ -66,7 +66,9 @@ const Tasks = () => {
               {tasks.map((task, index) => (
                 <div className="d-flex my-3 align-items-center" key={task.id}>
                   <li
-                    className="tasks-list"
+                    className={`tasks-list ${
+                      task.status === "completed" ? "completed-task" : ""
+                    }`}
                     onClick={() => handleToggleStatus(task.id)}
                   >
                     {index + 1}. {task.title}

@@ -48,7 +48,6 @@
   font-size: 26px;
   align-items: center;
   transition: all 0.2s ease-in-out;
-
 }
 
 /* hide empty trash by default */
@@ -64,4 +63,11 @@
 .delete-icon:hover .trash-icon.empty {
   display: inline-block;
   scale: 1.1;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }

@@ -1,0 +1,7 @@
+.finished-task {
+  list-style: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #444;
+  margin-top: 16px;
+}
