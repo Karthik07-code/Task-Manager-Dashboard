@@ -71,3 +71,39 @@
   opacity: 0.8;
   transition: all 0.3s ease;
 }
+
+.task-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  background: transparent;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.task-circle:hover {
+  border-color: #0d6efd; /* bootstrap primary blue */
+  background: rgba(13, 110, 253, 0.15);
+}
+
+/* Completed state */
+.task-circle.completed {
+  background: #0d6efd;
+  border-color: #0d6efd;
+  position: relative;
+}
+
+/* Check mark */
+.task-circle.completed::after {
+  content: "✓";
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
+

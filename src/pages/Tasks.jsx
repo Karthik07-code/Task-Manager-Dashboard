@@ -65,11 +65,18 @@ const Tasks = ({ tasks, setTasks }) => {
             <ul>
               {tasks.map((task, index) => (
                 <div className="d-flex my-3 align-items-center" key={task.id}>
+                  <button
+                    className={`task-circle ${
+                      task.status === "completed" ? "completed" : ""
+                    }`}
+                    onClick={() => handleToggleStatus(task.id)}
+                    aria-label="Mark task as completed"
+                  ></button>
+
                   <li
                     className={`tasks-list ${
                       task.status === "completed" ? "completed-task" : ""
                     }`}
-                    onClick={() => handleToggleStatus(task.id)}
                   >
                     {index + 1}. {task.title}
                   </li>
