@@ -12,7 +12,7 @@ const Dashboard = ({ tasks }) => {
 
   return (
     <>
-      <h1>Dashboard</h1>
+      <h1>Dashboard changed Bro...🤞😎</h1>
       <p> Total Tasks : {tasks.length}</p>
       <p> Completed Tasks : {completedTasks}</p>
       <p> Pending Tasks : {pendingTasks}</p>
