@@ -45,7 +45,7 @@ const Tasks = ({ tasks, setTasks }) => {
 
   return (
     <>
-      <h1>Tasks</h1>
+      <h1>Tasks💥</h1>
       <div className="task-container">
         <input
           type="text"

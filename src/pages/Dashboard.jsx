@@ -12,8 +12,8 @@ const Dashboard = ({ tasks }) => {
 
   return (
     <>
-      <h1>Dashboard changed Bro...🤞😎</h1>
-      <p> Total Tasks : {tasks.length}</p>
+      <h1>Dashboard😎</h1>
+      <p> Total Tasks : {totalTasks}</p>
       <p> Completed Tasks : {completedTasks}</p>
       <p> Pending Tasks : {pendingTasks}</p>
       <p> Completed Tasks Percentage: {completionPercentage}%</p>

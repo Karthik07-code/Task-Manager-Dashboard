@@ -4,7 +4,7 @@ const Completed = ({ tasks }) => {
   const completedTasks = tasks.filter((task) => task.status === "completed");
   return (
     <div>
-      <h1>Completed Tasks</h1>
+      <h1>Completed Tasks✅</h1>
 
       {completedTasks.length === 0 && <p> No Tasks Completed yet 🥲</p>}
 
