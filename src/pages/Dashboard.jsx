@@ -1,3 +1,5 @@
+import EpieChart from "../charts/EpieChart";
+
 const Dashboard = ({ tasks }) => {
   const totalTasks = tasks.length;
 
@@ -10,6 +12,17 @@ const Dashboard = ({ tasks }) => {
   const completionPercentage =
     totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100);
 
+  const piedata = [
+    {
+      name: "Total Tasks",
+      value: totalTasks,
+    },
+    {
+      name: "Completed Tasks",
+      value: completedTasks,
+    },
+    { name: "Pending Tasks", value: pendingTasks },
+  ];
   return (
     <>
       <h1>Dashboard😎</h1>
@@ -18,6 +31,7 @@ const Dashboard = ({ tasks }) => {
       <p> Pending Tasks : {pendingTasks}</p>
       <p> Completed Tasks Percentage: {completionPercentage}%</p>
       {console.log(tasks)}
+      <EpieChart data={piedata} />
     </>
   );
 };

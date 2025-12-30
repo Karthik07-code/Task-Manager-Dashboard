@@ -1,11 +1,11 @@
 import React from "react";
 import ReactECharts from "echarts-for-react";
 
-const EpieChart = () => {
+const EpieChart = ({ data }) => {
   const option = {
     title: {
-      text: "Referer of a Website",
-      subtext: "Fake Data",
+      text: "Tasks Insights",
+      subtext: "",
       left: "center",
     },
     tooltip: {
@@ -13,20 +13,19 @@ const EpieChart = () => {
     },
     legend: {
       orient: "vertical",
-      left: "left",
+      bottom: "bottom",
     },
     series: [
       {
         name: "Access From",
         type: "pie",
         radius: "50%",
-        data: [
-          { value: 1048, name: "Search Engine" },
-          { value: 735, name: "Direct" },
-          { value: 580, name: "Email" },
-          { value: 484, name: "Union Ads" },
-          { value: 300, name: "Video Ads" },
-        ],
+        // data: [
+        //   { value: 6, name: "Toatal Tasks" },
+        //   { value: 2, name: "Completed Tasks" },
+        //   { value: 4, name: "Pending Tasks" },
+        // ],
+        data: data,
         emphasis: {
           itemStyle: {
             shadowBlur: 10,

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "./layouts/Sidebar";
 import AppRoutes from "./routes/AppRoutes";
-import EpieChart from "./charts/EpieChart";
 
 function App() {
   const [tasks, setTasks] = useState(() => {
@@ -20,7 +19,6 @@ function App() {
         <div className="app-content">
           <AppRoutes tasks={tasks} setTasks={setTasks} />
         </div>
-        <EpieChart/>
       </div>
     </>
   );
