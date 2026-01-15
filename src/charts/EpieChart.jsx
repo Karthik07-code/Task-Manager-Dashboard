@@ -1,5 +1,6 @@
 import React from "react";
 import ReactECharts from "echarts-for-react";
+import { color } from "echarts";
 
 const EpieChart = ({ data }) => {
   const option = {
@@ -17,7 +18,7 @@ const EpieChart = ({ data }) => {
     },
     series: [
       {
-        name: "Access From",
+        name: "",
         type: "pie",
         radius: "50%",
         // data: [
@@ -28,7 +29,7 @@ const EpieChart = ({ data }) => {
         data: data,
         emphasis: {
           itemStyle: {
-            shadowBlur: 10,
+            shadowBlur: 7,
             shadowOffsetX: 0,
             shadowColor: "rgba(0, 0, 0, 0.5)",
           },
@@ -38,7 +39,7 @@ const EpieChart = ({ data }) => {
   };
   return (
     <div>
-      <ReactECharts option={option} />
+      <ReactECharts option={option} style={{ height: 300 }} />
     </div>
   );
 };

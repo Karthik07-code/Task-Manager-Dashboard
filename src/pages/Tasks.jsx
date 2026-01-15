@@ -30,9 +30,9 @@ const Tasks = ({ tasks, setTasks }) => {
     const updatedTasks = tasks.map((task) =>
       task.id === id
         ? {
-            ...task,
-            status: task.status === "pending" ? "completed" : "pending",
-          }
+          ...task,
+          status: task.status === "pending" ? "completed" : "pending",
+        }
         : task
     );
 
@@ -66,17 +66,15 @@ const Tasks = ({ tasks, setTasks }) => {
               {tasks.map((task, index) => (
                 <div className="d-flex my-3 align-items-center" key={task.id}>
                   <button
-                    className={`task-circle ${
-                      task.status === "completed" ? "completed" : ""
-                    }`}
+                    className={`task-circle ${task.status === "completed" ? "completed" : ""
+                      }`}
                     onClick={() => handleToggleStatus(task.id)}
                     aria-label="Mark task as completed"
                   ></button>
 
                   <li
-                    className={`tasks-list ${
-                      task.status === "completed" ? "completed-task" : ""
-                    }`}
+                    className={`tasks-list ${task.status === "completed" ? "completed-task" : ""
+                      }`}
                   >
                     {index + 1}. {task.title}
                   </li>
