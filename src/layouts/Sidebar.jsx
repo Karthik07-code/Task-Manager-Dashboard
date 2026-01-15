@@ -1,10 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
+import { IoClose } from "react-icons/io5";
 import "../styles/sidebar.css";
-const Sidebar = () => {
+
+const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <>
-      <div className="sidebar-wrapper">
-        <h2>Task Manager</h2>
+      <div className={`sidebar-wrapper ${isOpen ? "open" : ""}`}>
+        <div className="sidebar-header">
+          <h2>Task Manager</h2>
+          <button className="close-btn" onClick={toggleSidebar}>
+            <IoClose size={24} />
+          </button>
+        </div>
         <ul className="sidebar-menu">
           <li>
             <NavLink to="/" end>

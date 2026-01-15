@@ -107,3 +107,13 @@
   transform: translate(-50%, -55%);
 }
 
+
+@media (max-width: 768px) {
+  .tasks-list, .task-input {
+    font-size: 16px;
+  }
+  
+  .simple-button {
+    padding: 6px 10px; /* larger touch target */
+  }
+}
