@@ -1,9 +1,10 @@
 .calendar-card {
-  background: #fff;
-  border-radius: 18px;
-  padding: 20px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
   margin: 10px 0px;
+  border: 1px solid rgba(0,0,0,0.02);
 }
 
 @media (max-width: 768px) {

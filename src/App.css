@@ -5,8 +5,8 @@
 
 .app-content {
   flex: 1;
-  padding: 20px;
-  background: #f5f6fa;
+  padding: 30px;
+  background: var(--bg-color);
   overflow-y: auto;
 }
 

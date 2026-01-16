@@ -1,9 +1,25 @@
 .finished-task {
   list-style: none;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 500;
-  color: #444;
+  color: #636e72;
   margin-top: 16px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.02);
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+.finished-task:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  opacity: 1;
 }
 
 @media (max-width: 768px) {

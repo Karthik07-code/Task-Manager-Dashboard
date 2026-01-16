@@ -134,29 +134,3 @@
   position: sticky;
   top: 80px; /* keeps calendar visible while scrolling */
 }
-
-@media (max-width: 900px) {
-  .dashboard-layout {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .dashboard-right {
-    position: static;
-  }
-
-  .chart-container {
-    max-width: 100%;
-  }
-
-  .dashboard-tiles {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .dashboard-tile {
-    width: 100%;
-    min-width: unset;
-  }
-}

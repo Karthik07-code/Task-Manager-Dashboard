@@ -1,4 +1,5 @@
 import "../styles/dashboard.css";
+import "../styles/mini-calendar.css";
 import { FiList } from "react-icons/fi";
 import { HiOutlineClock } from "react-icons/hi";
 import { MdOutlinePendingActions } from "react-icons/md";
@@ -113,7 +114,9 @@ const Dashboard = ({ tasks }) => {
         </div>
 
         <div className="dashboard-right">
-          <CalendarPanel tasks={tasks} />
+          <div className="calendar-card">
+            <CalendarPanel tasks={tasks} />
+          </div>
         </div>
       </div>
     </>
