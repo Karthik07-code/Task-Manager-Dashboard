@@ -2,7 +2,7 @@
   width: 260px;
   height: 100vh;
   background: var(--sidebar-bg);
-  border-right: 1px solid rgba(0,0,0,0.05);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   color: var(--text-color);
   padding: 30px 20px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -33,6 +33,11 @@
     z-index: 1000;
     transform: translateX(-100%);
     width: 280px;
+    background: rgba(255, 255, 255, 0.95); /* High opacity for readability */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-lg);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .sidebar-wrapper.open {

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/task.css";
 import { FcEmptyTrash } from "react-icons/fc";
-import { FcFullTrash } from "react-icons/fc";
 
 const Tasks = ({ tasks, setTasks }) => {
   const [inputTask, setInputTask] = useState("");
@@ -30,10 +29,10 @@ const Tasks = ({ tasks, setTasks }) => {
     const updatedTasks = tasks.map((task) =>
       task.id === id
         ? {
-          ...task,
-          status: task.status === "pending" ? "completed" : "pending",
-        }
-        : task
+            ...task,
+            status: task.status === "pending" ? "completed" : "pending",
+          }
+        : task,
     );
 
     setTasks(updatedTasks);
@@ -45,51 +44,62 @@ const Tasks = ({ tasks, setTasks }) => {
 
   return (
     <>
-      <h1>Tasks💥</h1>
-      <div className="task-container">
-        <input
-          type="text"
-          onChange={handleTaskInputChange}
-          placeholder="Enter your task"
-          value={inputTask}
-          className="task-input"
-        />
-        <button className="simple-button add-task-btn" onClick={handleTask}>
-          Add task
-        </button>
+      <div className="task-page-wrapper">
+        <div className="task-header">
+          <h1>Tasks</h1>
+          <p className="text-muted">Manage your daily goals</p>
+        </div>
 
-        {tasks.length === 0 && <p>No tasks found</p>}
+        <div className="task-container">
+          <input
+            type="text"
+            onChange={handleTaskInputChange}
+            placeholder="What needs to be done?"
+            value={inputTask}
+            className="task-input"
+          />
+          <button className="add-task-btn" onClick={handleTask}>
+            Add New Task
+          </button>
 
-        <>
-          <div className="d-flex gap-1">
-            <ul>
-              {tasks.map((task, index) => (
-                <div className="d-flex my-3 align-items-center" key={task.id}>
-                  <button
-                    className={`task-circle ${task.status === "completed" ? "completed" : ""
+          {tasks.length === 0 && (
+            <div className="text-center text-muted mt-5">
+              <p>No tasks yet. Add one above!</p>
+            </div>
+          )}
+
+          <>
+            <div className="d-flex flex-column gap-1">
+              <ul style={{ padding: 0 }}>
+                {tasks.map((task) => (
+                  <div className="d-flex my-3" key={task.id}>
+                    <button
+                      className={`task-circle ${
+                        task.status === "completed" ? "completed" : ""
                       }`}
-                    onClick={() => handleToggleStatus(task.id)}
-                    aria-label="Mark task as completed"
-                  ></button>
+                      onClick={() => handleToggleStatus(task.id)}
+                      aria-label="Mark task as completed"
+                    ></button>
 
-                  <li
-                    className={`tasks-list ${task.status === "completed" ? "completed-task" : ""
+                    <li
+                      className={`tasks-list ${
+                        task.status === "completed" ? "completed-task" : ""
                       }`}
-                  >
-                    {index + 1}. {task.title}
-                  </li>
-                  <div
-                    className="delete-icon"
-                    onClick={() => handleDelete(task.id)}
-                  >
-                    <FcEmptyTrash className="trash-icon empty" />
-                    <FcFullTrash className="trash-icon full" />
+                    >
+                      {task.title}
+                    </li>
+                    <div
+                      className="delete-icon"
+                      onClick={() => handleDelete(task.id)}
+                    >
+                      <FcEmptyTrash className="trash-icon empty" />
+                    </div>
                   </div>
-                </div>
-              ))}
-            </ul>
-          </div>
-        </>
+                ))}
+              </ul>
+            </div>
+          </>
+        </div>
       </div>
     </>
   );

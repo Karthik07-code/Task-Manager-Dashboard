@@ -7,7 +7,6 @@ const Header = ({ toggleSidebar }) => {
       <button className="mobile-menu-btn" onClick={toggleSidebar}>
         <RxHamburgerMenu size={24} />
       </button>
-      <h2>Dashboard</h2>
     </div>
   )
 }

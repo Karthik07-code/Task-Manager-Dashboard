@@ -21,7 +21,8 @@ const EringChart = ({ data, percentage }) => {
           scale: false,
         },
         data: data,
-        color: ["#5dd39e", "#e0e0e0"], // completed / pending
+        // Premium colors: Success (Green) and Muted (Light Grey) for the ring
+        color: ["#00b894", "#dfe6e9"],
       },
     ],
 

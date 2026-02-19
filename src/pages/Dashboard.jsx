@@ -6,13 +6,12 @@ import { MdOutlinePendingActions } from "react-icons/md";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import * as echarts from "echarts";
 import EringChart from "../charts/EringChart";
-import CalendarPanel from "../components/calendar/CalendarPanel";
 
 const Dashboard = ({ tasks }) => {
   const totalTasks = tasks.length;
 
   const completedTasks = tasks.filter(
-    (task) => task.status === "completed"
+    (task) => task.status === "completed",
   ).length;
 
   const pendingTasks = tasks.filter((task) => task.status === "pending").length;
@@ -57,13 +56,12 @@ const Dashboard = ({ tasks }) => {
   return (
     <>
       <div className="dashboard-layout">
-        <div className="dashboard-left">
+        <div className="dashboard-header">
+          <h1>Dashboard</h1>
+          <p className="text-muted">Overview of your productivity</p>
+        </div>
 
-          <div className="dashboard-header">
-            <h1>Dashboard😎</h1>
-            <p className="text-muted">Visual overview of your productivity</p>
-          </div>
-
+        <div className="dashboard-content">
           <div className="dashboard-tiles">
             <div className="dashboard-tile tile-total">
               <div className="tile-icon">
@@ -106,16 +104,25 @@ const Dashboard = ({ tasks }) => {
             </div>
           </div>
 
-          <div className="d-flex gap-3 mt-4 align-items-center">
+          <div className="dashboard-charts-section mt-5">
             <div className="chart-container">
-              <EringChart data={ringPiedata} percentage={completionPercentage} />
+              <h3 className="chart-title">Task Overview</h3>
+              <EringChart
+                data={ringPiedata}
+                percentage={completionPercentage}
+              />
             </div>
-          </div>
-        </div>
-
-        <div className="dashboard-right">
-          <div className="calendar-card">
-            <CalendarPanel tasks={tasks} />
+            {/* Placeholder for future charts or stats to visual balance */}
+            <div className="stats-summary-card">
+              <h3>Productivity Score</h3>
+              <div className="score-display">
+                <span className="score">
+                  {Math.min(completionPercentage, 100)}%
+                </span>
+                <span className="label">Efficient</span>
+              </div>
+              <p className="insight-text">You are doing great! Keep it up.</p>
+            </div>
           </div>
         </div>
       </div>
